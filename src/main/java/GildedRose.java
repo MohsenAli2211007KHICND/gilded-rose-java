@@ -17,31 +17,34 @@ public class GildedRose {
 
         switch (name) {
             case "normal":
-            Normal normal = new Normal(name, quality, daysRemaining);
+                Normal normal = new Normal(name, quality, daysRemaining);
                 normal.tick();
                 this.quality=normal.quality;
                 this.daysRemaining = normal.daysRemaining;
                 break;
             case "Aged Brie":
-            AgedBrie aged = new AgedBrie(name, quality, daysRemaining);
+                AgedBrie aged = new AgedBrie(name, quality, daysRemaining);
                 aged.tick();
                 this.quality=aged.quality;
                 this.daysRemaining= aged.daysRemaining;
                 break;
             case "Sulfuras, Hand of Ragnaros":
-            Sulfuras sulfuras = new Sulfuras(name, quality, daysRemaining);
-            sulfuras.tick();
-            this.quality=sulfuras.quality;
-            this.daysRemaining= sulfuras.daysRemaining;
+                Sulfuras sulfuras = new Sulfuras(name, quality, daysRemaining);
+                sulfuras.tick();
+                this.quality=sulfuras.quality;
+                this.daysRemaining= sulfuras.daysRemaining;
                 break;
             case "Backstage passes to a TAFKAL80ETC concert":
-            Backstage backstage = new Backstage(name, quality, daysRemaining);
-            backstage.tick();
-            this.quality=backstage.quality;
-            this.daysRemaining= backstage.daysRemaining;
+                Backstage backstage = new Backstage(name, quality, daysRemaining);
+                backstage.tick();
+                this.quality=backstage.quality;
+                this.daysRemaining= backstage.daysRemaining;
                 break;
             case "Conjured Item":
-                conjuredItem_tick();
+                Conjured conjured = new Conjured(name, quality, daysRemaining);
+                conjured.tick();
+                this.quality=conjured.quality;
+                this.daysRemaining= conjured.daysRemaining;
                 break;
 
         }
@@ -90,19 +93,18 @@ public class GildedRose {
     //     }
     // }
 
-    public void conjuredItem_tick(){
-        daysRemaining -=1;
-        if(quality >1){
-            quality -=1;
-        }
-        if(daysRemaining<=0){
-            quality -=2;
-        }
-        if(quality !=0){
-        quality -= 1;
-        }
-       
-    }
+    // public void tick(){
+    //     daysRemaining -=1;
+    //     if(quality != 0){
+    //         quality -= 1;
+    //         if(quality >= 1){
+    //             quality -= 1;
+    //             if(quality !=0 && daysRemaining < 0){
+    //                  quality -= 2;
+    //             }
+    //         }
+    //     }
+    // }
 
 
     // if(!StringUtils.equals(name, "Aged Brie") && !StringUtils.equals(name,
