@@ -234,45 +234,45 @@ public class GildedRoseTest {
         assertEquals(-2, item.daysRemaining);
     }
 
-    // @Test
+    @Test
     // @Ignore
-    // public void testConjuredItemBeforeSellDate() {
-    //     GildedRose item = new GildedRose("Conjured Item", 10, 5);
-    //     item.tick();
+    public void testConjuredItemBeforeSellDate() {
+        GildedRose item = new GildedRose("Conjured Item", 10, 5);
+        item.tick();
 
-    //     assertEquals(8, item.quality);
-    //     assertEquals(4, item.daysRemaining);
-    // }
+        assertEquals(8, item.quality);
+        assertEquals(4, item.daysRemaining);
+    }
 
-    // @Test
+    @Test
     // @Ignore
-    // public void testConjuredItemAtZeroQuality() {
-    //     GildedRose item = new GildedRose("Conjured Item", 1, 1);
-    //     item.tick();
+    public void testConjuredItemAtZeroQuality() {
+        GildedRose item = new GildedRose("Conjured Item", 1, 1);
+        item.tick();
 
-    //     assertEquals(0, item.quality);
-    //     assertEquals(0,item.daysRemaining);
-    // }
+        assertEquals(0, item.quality);
+        assertEquals(0,item.daysRemaining);
+    }
 
-    // @Test
+    @Test
     // @Ignore
-    // public void testConjuredItemOnSellDate() {
-    //     GildedRose item = new GildedRose("Conjured Item", 10, 0);
-    //     item.tick();
+    public void testConjuredItemOnSellDate() {
+        GildedRose item = new GildedRose("Conjured Item", 10, 0);
+        item.tick();
 
-    //     assertEquals(6, item.quality);
-    //     assertEquals(-1, item.daysRemaining);
-    // }
+        assertEquals(6, item.quality);
+        assertEquals(-1, item.daysRemaining);
+    }
 
-    // @Test
+    @Test
     // @Ignore
-    // public void testConjuredItemOnSellDateAtZeroQuality() {
-    //     GildedRose item = new GildedRose("Conjured Item", 0, 0);
-    //     item.tick();
+    public void testConjuredItemOnSellDateAtZeroQuality() {
+        GildedRose item = new GildedRose("Conjured Item", 0, 0);
+        item.tick();
 
-    //     assertEquals(0, item.quality);
-    //     assertEquals(-1, item.daysRemaining);
-    // }
+        assertEquals(0, item.quality);
+        assertEquals(-1, item.daysRemaining);
+    }
 
     // @Test
     // @Ignore

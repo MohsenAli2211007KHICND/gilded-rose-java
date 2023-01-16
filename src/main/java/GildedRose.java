@@ -11,67 +11,97 @@ public class GildedRose {
         this.quality = quality;
         this.daysRemaining = daysRemaining;
     }
+    
 
     public void tick() {
 
         switch (name) {
             case "normal":
-                normal_tick();
+            Normal normal = new Normal(name, quality, daysRemaining);
+                normal.tick();
+                this.quality=normal.quality;
+                this.daysRemaining = normal.daysRemaining;
                 break;
             case "Aged Brie":
-                agedBrie_tick();
+            AgedBrie aged = new AgedBrie(name, quality, daysRemaining);
+                aged.tick();
+                this.quality=aged.quality;
+                this.daysRemaining= aged.daysRemaining;
                 break;
             case "Sulfuras, Hand of Ragnaros":
-                sulfuras_tic();
+            Sulfuras sulfuras = new Sulfuras(name, quality, daysRemaining);
+            sulfuras.tick();
+            this.quality=sulfuras.quality;
+            this.daysRemaining= sulfuras.daysRemaining;
                 break;
             case "Backstage passes to a TAFKAL80ETC concert":
-                backstage_tick();
+            Backstage backstage = new Backstage(name, quality, daysRemaining);
+            backstage.tick();
+            this.quality=backstage.quality;
+            this.daysRemaining= backstage.daysRemaining;
+                break;
+            case "Conjured Item":
+                conjuredItem_tick();
                 break;
 
         }
     }
 
-    private void normal_tick() {
+    // private void normal_tick() {
 
-        daysRemaining -= 1;
-        if (quality != 0) {
-            quality -= 1;
-        }
-        if (daysRemaining <= 0) {
-            quality -= 1;
-        }
-    }
+    //     daysRemaining -= 1;
+    //     if (quality != 0) {
+    //         quality -= 1;
+    //     }
+    //     if (daysRemaining <= 0) {
+    //         quality -= 1;
+    //     }
+    // }
 
-    private void agedBrie_tick() {
-        daysRemaining -= 1;
-        if (!(quality >= 50)) {
-            quality += 1;
-            if (daysRemaining <= 0 && quality < 50) {
-                quality += 1;
-            }
-        }
+    // private void agedBrie_tick() {
+    //     daysRemaining -= 1;
+    //     if (!(quality >= 50)) {
+    //         quality += 1;
+    //         if (daysRemaining <= 0 && quality < 50) {
+    //             quality += 1;
+    //         }
+    //     }
 
-    }
+    // }
 
-    private void sulfuras_tic() {
+    // private void sulfuras_tic() {
 
-    }
+    // }
 
-    private void backstage_tick() {
-        daysRemaining -=1;
-        if ( !(quality>=50)){
+    // public void tick() {
+    //     daysRemaining -=1;
+    //     if ( !(quality>=50)){
            
-            quality +=1;
-            if (daysRemaining < 10){
-                quality +=1;
-                if( daysRemaining < 5){
-                    quality +=1;
-                }
-            }
-            if(daysRemaining < 0){
-                quality =0;
-            }
+    //         quality +=1;
+    //         if (daysRemaining < 10){
+    //             quality +=1;
+    //             if( daysRemaining < 5){
+    //                 quality +=1;
+    //             }
+    //         }
+    //         if(daysRemaining < 0){
+    //             quality =0;
+    //         }
+    //     }
+    // }
+
+    public void conjuredItem_tick(){
+        daysRemaining -=1;
+        if(quality >1){
+            quality -=1;
         }
+        if(daysRemaining<=0){
+            quality -=2;
+        }
+        if(quality !=0){
+        quality -= 1;
+        }
+       
     }
 
 
